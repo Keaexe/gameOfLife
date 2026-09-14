@@ -17,13 +17,17 @@ The Game of Life, also known as Conway's Game of Life (sometimes abbreviated as 
 | **Dark Mode** | Easy-on-the-eyes interface |
 | **Responsive Design** | Works on desktop and mobile devices |
 
+## Images
+![Light mode](https://i.postimg.cc/3JPq3v2x/Screenshot-20260914-145630.webp)
+![Dark mode](https://i.postimg.cc/FR9q2X3J/Screenshot-20260914-145555.webp)
+
 ## Installation & Usage
 
 Since this is a static web application, no build process is required:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/gameOfLife.git
+   git clone https://github.com/Keaexe/gameOfLife.git
    cd gameOfLife
    ```
 2. **Use in your browser**
