@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Life</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body class="dark-mode">
+
+    <div class="settings">
+      <button class="tps" onclick="setTPS();">Set TPS</button>
+      <button class="resize" onclick="delBoard(); createBoard();">Resize board</button>
+    </div>
+
+    <div class="game-container">
+      <h1>The Game of Life</h1>
+
+      <div class="stats-panel">
+        <div class="stat-item">Ticks: <span id="ticks">0</span></div>
+        <div class="stat-item">Living Cells: <span id="livingCells">0</span></div>
+      </div>
+
+      <div class="controls">
+        <button id="tickB" onclick="tick();">Step</button>
+        <button id="playB" onclick="continuousTick();">Play</button>
+        <button id="pauseB" disabled="disabled" onclick="endContinuousTick();">Pause</button>
+        <button id="resetB" onclick="reset();">Reset</button>
+      </div>
+
+      <div class="board-wrapper">
+        <table id="board"></table>
+      </div>
+    </div>
+    <button class="theme-toggle" onclick="toggleTheme()">🌙 / ☀️</button>
+  </body>
+</html>

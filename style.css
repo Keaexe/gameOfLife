@@ -1,0 +1,164 @@
+/* Variables for Light Mode*/
+:root {
+    --bg-body: #e0e7ff;      /* Very pale blue background */
+    --bg-panel: #ffffff;     /* White container background */
+    --text-main: #1e293b;    /* Dark slate for text */
+    
+    /* Grid Colors */
+    --cell-dead: #8da1f8;    /* The blue */
+    --cell-alive: #1f2937;   /* Dark grey/black for contrast */
+    --cell-border: #6366f1;  /* Slightly darker blue border */
+    
+    /* UI Elements */
+    --btn-primary: #4f46e5;  /* Indigo button */
+    --btn-text: #ffffff;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-body: #0f172a;      /* Deep dark blue/black */
+    --bg-panel: #1e293b;     /* Dark slate container */
+    --text-main: #f1f5f9;    /* Off-white text */
+    
+    /* Grid Colors */
+    --cell-dead: #334155;    /* Dark grey for empty space */
+    --cell-alive: #38bdf8;   /* Neon Cyan for life - very vibrant */
+    --cell-border: #475569;  /* Subtle border */
+    
+    /* UI Elements */
+    --btn-primary: #38bdf8;  /* Cyan button */
+    --btn-text: #0f172a;     /* Dark text on bright button */
+}
+
+/* Global Reset & Layout */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    margin-top: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* Control Panel Container */
+.game-container {
+    background-color: var(--bg-panel);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 100%;
+    width: fit-content;
+    transition: background-color 0.3s ease;
+}
+
+/* Stats Dashboard */
+.stats-panel {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.stat-item span {
+    color: var(--btn-primary);
+}
+
+/* Buttons */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: var(--btn-primary);
+    color: var(--btn-text);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s, opacity 0.2s;
+}
+
+button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+button:disabled {
+    background-color: #cbd5e1;
+    cursor: not-allowed;
+    transform: none;
+}
+
+body.dark-mode button:disabled {
+    background-color: #475569;
+    color: #94a3b8;
+}
+
+/* The Grid */
+table#board {
+    border-collapse: collapse;
+    margin: 0 auto;
+    /* Prevent board from getting too squashed on mobile */
+    overflow: hidden; 
+    box-shadow: var(--shadow);
+    border-radius: 4px;
+}
+
+/* Responsive Scroll Wrapper for the board */
+.board-wrapper {
+    max-width: 90vw;
+    max-height: 60vh;
+    overflow: auto; /* Allows scrolling on small screens */
+    border: 2px solid var(--cell-border);
+    border-radius: 8px;
+}
+
+td {
+    width: 25px;  /* Slightly larger for touch targets */
+    height: 25px;
+    border: 1px solid var(--cell-border);
+    background-color: var(--cell-dead);
+    cursor: pointer;
+    transition: background-color 0.2s ease; /* Smooth toggle animation */
+}
+
+td.alive {
+    background-color: var(--cell-alive);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+
+/* Dark Mode Toggle Switch */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: 2px solid grey;
+    color: var(--text-main);
+    padding: 5px 10px;
+    font-size: 0.9rem;
+}
+
+.settings {
+    margin-right: auto;
+}
