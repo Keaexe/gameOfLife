@@ -25,11 +25,8 @@ The Game of Life, also known as Conway's Game of Life (sometimes abbreviated as 
 
 Since this is a static web application, no build process is required:
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Keaexe/gameOfLife.git
-   cd gameOfLife
-   ```
+1. **Download the [latest release](https://github.com/Keaexe/gameOfLife/releases/latest)**
+
 2. **Use in your browser**
    + By click-dragging
    + By double clicking
